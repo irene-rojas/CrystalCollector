@@ -1,0 +1,39 @@
+body {
+    margin: 0 auto;
+    /* background: cover no-repeat; */
+}
+
+#header {
+    background-color: white;
+    text-align: center;
+    opacity: 0.90;
+    padding: 10px;
+}
+
+#instructions {
+    background-color: white;
+    opacity: 0.90;
+    margin-top: 15px;
+    padding-top: 25px;
+}
+
+.row {
+    margin: 0 auto;
+}   
+
+#buttonRow {
+    margin: 0 auto;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    margin-bottom: 50px;
+}
+
+.card {
+    margin-top: 15px;
+}
+
+#scoreDetails {
+    margin-top: 5px;
+    opacity: 0.90;
+}
