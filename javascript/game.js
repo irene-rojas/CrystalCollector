@@ -16,14 +16,13 @@ document.getElementById('targetNumber').innerHTML = targetNumber;
 
 
 // create button value array
-counter = 0;
 var buttonValuesArray = [];
     for (var i = 1; i <= 9; i++) {
         buttonValuesArray.push(i);
 }
 console.log(buttonValuesArray);
 
-
+// assign values to individual buttons
 var redButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
     document.getElementById('redButton').innerHTML = redButton;
     console.log(redButton);
@@ -41,31 +40,4 @@ var yellowButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.
     console.log(yellowButton);
 
 
-    userTotal = counter;
-function userTotal() {
-     return redButton + greenButton + blueButton + yellowButton;
-}
-    document.getElementById('userTotal').innerHTML = userTotal;
-    console.log(userTotal);
-
-// constant during current game, change with next round, then stay current with that round, etc.
-// value reveals only after user guesses
-
-
-// record user clicks on crystal buttons
-// create an array/index that contains the user choice values and adds them, and compares them to target number
-// on.click send button value to array to determine user total
-
-// var counter = 0;
-// $(".btn-crystal").on("click", function() {
-// var userTotal = ($(this).attr("buttonValuesArray"));
-// counter += btn-crystal;
-// var userTotal = counter;
-// document.getElementById('userTotal').innerHTML = userTotal;
-// });
-
-
-
-// if array/index total exceeds target number, user loses
-// if user loses, i++ in losses section, and game resets
-// if user score = target number, i++ in wins section and game resets
+// 
