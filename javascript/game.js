@@ -40,4 +40,31 @@ var yellowButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.
     console.log(yellowButton);
 
 
-// 
+// your total section
+
+// create userTotalArray 
+// when user clicks a gem, the value of that gem gets pushed into userTotal index
+var userTotalArray = [];
+document.getElementById("redButton").onclick = function() {
+userTotalArray.push(redButton);
+};
+userTotalArray.push(greenButton);
+userTotalArray.push(blueButton);
+userTotalArray.push(yellowButton);
+
+
+var userTotal = userTotalArray.reduce( function(total, amount){
+  return total + amount
+});
+console.log(userTotal);
+
+
+// the numbers in userTotal array are added and displayed in userTotal div
+counter = 0;
+// var userTotal = counter;
+// document.getElementById('userTotalArray').innerHTML = userTotalArray;
+document.getElementById('userTotal').innerHTML = userTotal;
+
+
+
+
