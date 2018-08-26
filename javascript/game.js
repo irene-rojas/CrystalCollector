@@ -40,16 +40,22 @@ var yellowButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.
 // constant during current game, change with next round, then stay current with that round, etc.
 // value reveals only after user guesses
 
-// var userTotal = function adder('redButton', 'greenButton', 'blueButton', 'yellowButton', 'return redButton + greenButton + blueButton + yellowButton'); 
-//     document.getElementById('userTotal').innerHTML = userTotal;
 
-
+// var userTotal = [];
 // record user clicks on cyrstal buttons
 // create an array/index that contains the user choice values and adds them, and compares them to target number
+// on.click send button value to array to determine user total
+
+var counter = 0;
+$(".btn-crystal").on("click", function() {
+var userTotal = ($(this).attr("buttonValuesArray"));
+counter += btn-crystal;
+var userTotal = counter;
+document.getElementById('userTotal').innerHTML = userTotal;
+});
+
+
+
 // if array/index total exceeds target number, user loses
-
 // if user loses, i++ in losses section, and game resets
-
 // if user score = target number, i++ in wins section and game resets
-
-// 
