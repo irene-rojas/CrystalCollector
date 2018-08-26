@@ -45,9 +45,13 @@ var yellowButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.
 // create userTotalArray 
 // when user clicks a gem, the value of that gem gets pushed into userTotal index
 var userTotalArray = [];
-document.getElementById("redButton").onclick = function() {
+// document.getElementById("redButton").onclick = function() {
+$(document).ready(function() {
+    $("redButton").click(function() {
 userTotalArray.push(redButton);
-};
+// };
+    });
+});
 userTotalArray.push(greenButton);
 userTotalArray.push(blueButton);
 userTotalArray.push(yellowButton);
@@ -67,4 +71,13 @@ document.getElementById('userTotal').innerHTML = userTotal;
 
 
 
-
+// win-loss section
+winCounter = 0;
+lossCounter = 0;
+if (userTotal === targetNumber) {
+    winCounter++;
+    document.getElementById("wins").innerHTML = wins;
+} else if (userTotal >= targetNumber) {
+    lossCounter++;
+    document.getElementById("losses").innerHTML = losses;
+}
