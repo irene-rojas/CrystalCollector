@@ -1,8 +1,8 @@
 // target number array 5-20
 var targetNumberArray = [];
-    for (var i = 10; i <= 30; i++) {
-        targetNumberArray.push(i);
-    };
+for (var i = 10; i <= 30; i++) {
+    targetNumberArray.push(i);
+};
     // console.log(targetNumberArray);
 
 // computer picks random target number
@@ -16,46 +16,59 @@ document.getElementById('targetNumber').innerHTML = targetNumber;
 
 // BUTTON SECTION
 // create button value array
+var winCounter = 0;
+var lossCounter = 0;
 var buttonValuesArray = [];
-    for (var i = 1; i <= 9; i++) {
-        buttonValuesArray.push(i);
+for (var i = 1; i <= 9; i++) {
+    buttonValuesArray.push(i);
 }
 console.log(buttonValuesArray);
 
 // assign values to individual buttons
-var redButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
-    document.getElementById('redButton').innerHTML = redButton;
-    console.log(redButton);
 
 var greenButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
-    document.getElementById('greenButton').innerHTML = greenButton;
-    console.log(greenButton);
+document.getElementById('greenButton').innerHTML = greenButton;
+console.log(greenButton);
         
 var blueButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
-    document.getElementById('blueButton').innerHTML = blueButton;
-    console.log(blueButton);
+document.getElementById('blueButton').innerHTML = blueButton;
+console.log(blueButton);
 
 var yellowButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
-    document.getElementById('yellowButton').innerHTML = yellowButton;
-    console.log(yellowButton);
+document.getElementById('yellowButton').innerHTML = yellowButton;
+console.log(yellowButton);
 
 
 // create userTotalArray 
 // when user clicks a gem, the value of that gem gets pushed into userTotalArray 
 var userTotalArray = [];
-userTotalArray.push(redButton);
-userTotalArray.push(greenButton);
-userTotalArray.push(blueButton);
-userTotalArray.push(yellowButton);
+// userTotalArray.push(redButton);
+// userTotalArray.push(greenButton);
+// userTotalArray.push(blueButton);
+// userTotalArray.push(yellowButton);
+// console.log("userTotalArray: " + userTotalArray);
 var userTotal = 0;
-$(document).ready(function() {        
-        $(('.btn-crystal')).click(function(event) {  
-            console.log("sdfsdf");      
-            userTotalArray.push($(this).val());
+$(document).ready(function() {    
+    
+    var redButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
+    $('#redButton').val(redButton);
+    console.log($('#redButton').val());
+
+        $('.btn-crystal').click(function(event) {  
+   
+            console.log($(this).val());
+            userTotalArray.push(parseInt($(this).val()));
             userTotal = (userTotal + userTotalArray);
-            
+            console.log(userTotalArray);
+
+            userTotal = userTotalArray.reduce( function(total, amount){
+                return total + amount;
+            });
+
+            $('#userTotal').text(userTotal);
+            // the win/loss function goes here
         }); 
-    });
+});
 
 console.log(userTotal);
 
@@ -65,10 +78,10 @@ console.log(userTotal);
 
 // userTotal
 // the numbers in userTotal array are added and displayed in userTotal div
-userTotal = userTotalArray.reduce( function(total, amount){
-  return total + amount;
-});
-console.log(userTotal);
+// userTotal = userTotalArray.reduce( function(total, amount){
+//     return total + amount;
+//   });
+// console.log(userTotal);
 
 // counter = 0;
 // var userTotal = counter++;
@@ -78,8 +91,10 @@ document.getElementById('userTotal').innerHTML = userTotal;
 
 
 // win-loss section
-winCounter = 0;
-lossCounter = 0;
+// function per click
+// this is loading before the javascript--- NO!
+// winCounter = 0;
+// lossCounter = 0;
 if (userTotal === targetNumber) {
     winCounter++;
     document.getElementById("wins").innerHTML = wins;
