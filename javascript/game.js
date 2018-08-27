@@ -16,8 +16,6 @@ document.getElementById('targetNumber').innerHTML = targetNumber;
 
 // BUTTON SECTION
 // create button value array
-var winCounter = 0;
-var lossCounter = 0;
 var buttonValuesArray = [];
 for (var i = 1; i <= 9; i++) {
     buttonValuesArray.push(i);
@@ -26,70 +24,66 @@ console.log(buttonValuesArray);
 
 
 // create userTotalArray 
-// when user clicks a gem, the value of that gem gets pushed into userTotalArray 
+// when user clicks a crystal, the value of that crystal gets pushed into userTotalArray 
 var userTotalArray = [];
 var userTotal = 0;
+var winCounter = 0;
+var lossCounter = 0;
 $(document).ready(function() {    
-    
+    // red button
     var redButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
     $('#redButton').val(redButton);
     console.log($('#redButton').val());
+    // green button
     var greenButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
     $('#greenButton').val(greenButton);
     console.log($('#greenButton').val());
+    // blue button
     var blueButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
     $('#blueButton').val(blueButton);
     console.log($('#blueButton').val());
+    // yellow button
     var yellowButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
     $('#yellowButton').val(yellowButton);
     console.log($('#yellowButton').val());
 
+        // on any button click, function executes
         $('.btn-crystal').click(function(event) {  
    
             console.log($(this).val());
             userTotalArray.push(parseInt($(this).val()));
             userTotal = (userTotal + userTotalArray);
             console.log(userTotalArray);
-
+            // turns the numbers in the userTotalArray into a sum
             userTotal = userTotalArray.reduce( function(total, amount){
                 return total + amount;
             });
-
+            // writes userTotal to HTML
             $('#userTotal').text(userTotal);
             // the win/loss function goes here
             if (userTotal === targetNumber) {
                 winCounter++;
-                document.getElementById("wins").innerHTML = wins;
-            } else if (userTotal >= targetNumber) {
+                $("#wins").text(winCounter);
+                // document.getElementById("wins").innerHTML = wins;
+                // $("#targetNumber").replaceWith();
+                // $("#targetNumber").reset("");
+            
+            } 
+            else if (userTotal >= targetNumber) {
                 lossCounter++;
-                document.getElementById("losses").innerHTML = losses;
+                $("#losses").text(lossCounter);
+                // document.getElementById("losses").innerHTML = losses;
+                // userTotal = 0;
+                // $("userTotal").replaceWith("");
+                // $(":reset");
             };
             
         }); 
 });
 
+// I need a function that resets the target number and crystal values when user wins or loses. But win/loss counter cannot change
+
 console.log(userTotal);
 
-
-// console.log(userTotalArray);
-
-
-// userTotal
-// the numbers in userTotal array are added and displayed in userTotal div
-// userTotal = userTotalArray.reduce( function(total, amount){
-//     return total + amount;
-//   });
-// console.log(userTotal);
-
-// counter = 0;
-// var userTotal = counter++;
-// document.getElementById('userTotalArray').innerHTML = userTotalArray;
 document.getElementById('userTotal').innerHTML = userTotal;
 
-
-
-// win-loss section
-// function per click
-// this is loading before the javascript--- NO!
-// winCounter = 0;
-// lossCounter = 0;
