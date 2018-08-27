@@ -14,7 +14,7 @@ document.getElementById('targetNumber').innerHTML = targetNumber;
 // console.log(targetNumber);
 // END TARGETNUMBER AREA
 
-
+// BUTTON SECTION
 // create button value array
 var buttonValuesArray = [];
     for (var i = 1; i <= 9; i++) {
@@ -40,32 +40,38 @@ var yellowButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.
     console.log(yellowButton);
 
 
-// your total section
-
 // create userTotalArray 
-// when user clicks a gem, the value of that gem gets pushed into userTotal index
+// when user clicks a gem, the value of that gem gets pushed into userTotalArray 
 var userTotalArray = [];
-// document.getElementById("redButton").onclick = function() {
-$(document).ready(function() {
-    $("redButton").click(function() {
 userTotalArray.push(redButton);
-// };
-    });
-});
 userTotalArray.push(greenButton);
 userTotalArray.push(blueButton);
 userTotalArray.push(yellowButton);
+var userTotal = 0;
+$(document).ready(function() {        
+        $(('.btn-crystal')).click(function(event) {  
+            console.log("sdfsdf");      
+            userTotalArray.push($(this).val());
+            userTotal = (userTotal + userTotalArray);
+            
+        }); 
+    });
 
-
-var userTotal = userTotalArray.reduce( function(total, amount){
-  return total + amount
-});
 console.log(userTotal);
 
 
+// console.log(userTotalArray);
+
+
+// userTotal
 // the numbers in userTotal array are added and displayed in userTotal div
-counter = 0;
-// var userTotal = counter;
+userTotal = userTotalArray.reduce( function(total, amount){
+  return total + amount;
+});
+console.log(userTotal);
+
+// counter = 0;
+// var userTotal = counter++;
 // document.getElementById('userTotalArray').innerHTML = userTotalArray;
 document.getElementById('userTotal').innerHTML = userTotal;
 
@@ -80,4 +86,4 @@ if (userTotal === targetNumber) {
 } else if (userTotal >= targetNumber) {
     lossCounter++;
     document.getElementById("losses").innerHTML = losses;
-}
+};
