@@ -24,35 +24,25 @@ for (var i = 1; i <= 9; i++) {
 }
 console.log(buttonValuesArray);
 
-// assign values to individual buttons
-
-var greenButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
-document.getElementById('greenButton').innerHTML = greenButton;
-console.log(greenButton);
-        
-var blueButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
-document.getElementById('blueButton').innerHTML = blueButton;
-console.log(blueButton);
-
-var yellowButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
-document.getElementById('yellowButton').innerHTML = yellowButton;
-console.log(yellowButton);
-
 
 // create userTotalArray 
 // when user clicks a gem, the value of that gem gets pushed into userTotalArray 
 var userTotalArray = [];
-// userTotalArray.push(redButton);
-// userTotalArray.push(greenButton);
-// userTotalArray.push(blueButton);
-// userTotalArray.push(yellowButton);
-// console.log("userTotalArray: " + userTotalArray);
 var userTotal = 0;
 $(document).ready(function() {    
     
     var redButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
     $('#redButton').val(redButton);
     console.log($('#redButton').val());
+    var greenButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
+    $('#greenButton').val(greenButton);
+    console.log($('#greenButton').val());
+    var blueButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
+    $('#blueButton').val(blueButton);
+    console.log($('#blueButton').val());
+    var yellowButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
+    $('#yellowButton').val(yellowButton);
+    console.log($('#yellowButton').val());
 
         $('.btn-crystal').click(function(event) {  
    
@@ -67,6 +57,14 @@ $(document).ready(function() {
 
             $('#userTotal').text(userTotal);
             // the win/loss function goes here
+            if (userTotal === targetNumber) {
+                winCounter++;
+                document.getElementById("wins").innerHTML = wins;
+            } else if (userTotal >= targetNumber) {
+                lossCounter++;
+                document.getElementById("losses").innerHTML = losses;
+            };
+            
         }); 
 });
 
@@ -95,10 +93,3 @@ document.getElementById('userTotal').innerHTML = userTotal;
 // this is loading before the javascript--- NO!
 // winCounter = 0;
 // lossCounter = 0;
-if (userTotal === targetNumber) {
-    winCounter++;
-    document.getElementById("wins").innerHTML = wins;
-} else if (userTotal >= targetNumber) {
-    lossCounter++;
-    document.getElementById("losses").innerHTML = losses;
-};
