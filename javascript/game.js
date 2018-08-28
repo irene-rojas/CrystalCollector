@@ -1,6 +1,6 @@
 // target number array 5-20
 var targetNumberArray = [];
-for (var i = 10; i <= 30; i++) {
+for (var i = 19; i <= 120; i++) {
     targetNumberArray.push(i);
 };
     // console.log(targetNumberArray);
@@ -17,7 +17,7 @@ document.getElementById('targetNumber').innerHTML = targetNumber;
 // BUTTON SECTION
 // create button value array
 var buttonValuesArray = [];
-for (var i = 1; i <= 9; i++) {
+for (var i = 1; i <= 12; i++) {
     buttonValuesArray.push(i);
 }
 console.log(buttonValuesArray);
@@ -29,6 +29,7 @@ var userTotalArray = [];
 var userTotal = 0;
 var winCounter = 0;
 var lossCounter = 0;
+
 $(document).ready(function() {    
     // red button
     var redButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
@@ -46,7 +47,7 @@ $(document).ready(function() {
     var yellowButton = buttonValuesArray[Math.floor(Math.random()*buttonValuesArray.length)];
     $('#yellowButton').val(yellowButton);
     console.log($('#yellowButton').val());
-
+    
         // on any button click, function executes
         $('.btn-crystal').click(function(event) {  
    
@@ -64,25 +65,21 @@ $(document).ready(function() {
             if (userTotal === targetNumber) {
                 winCounter++;
                 $("#wins").text(winCounter);
-                // $("#targetNumber").replaceWith();
-                // $("#targetNumber").reset("");
-                
+                    // location.reload(true);
+                    // I could not figure out a way to refresh just the targetumber/userTotal section.
             } 
             else if (userTotal >= targetNumber) {
                 lossCounter++;
                 $("#losses").text(lossCounter);
-                // $("userTotal").val("");
-                // userTotal = 0;
-                // $("userTotal").replaceWith("");
-                // $(":reset");
+                // location.reload(true);
             };
-            
-        }); 
+        }) 
+    $("button").click(function(){
+        location.reload(true);
+    //     // I could not figure out a way to refresh just the targetumber/userTotal section.
+    });
 });
 
-// I need a function that resets the target number and crystal values when user wins or loses. But win/loss counter cannot change
-
-console.log(userTotal);
+// console.log(userTotal);
 
 document.getElementById('userTotal').innerHTML = userTotal;
-
