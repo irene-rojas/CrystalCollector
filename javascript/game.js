@@ -64,15 +64,14 @@ $(document).ready(function() {
             if (userTotal === targetNumber) {
                 winCounter++;
                 $("#wins").text(winCounter);
-                // document.getElementById("wins").innerHTML = wins;
                 // $("#targetNumber").replaceWith();
                 // $("#targetNumber").reset("");
-            
+                
             } 
             else if (userTotal >= targetNumber) {
                 lossCounter++;
                 $("#losses").text(lossCounter);
-                // document.getElementById("losses").innerHTML = losses;
+                // $("userTotal").val("");
                 // userTotal = 0;
                 // $("userTotal").replaceWith("");
                 // $(":reset");
