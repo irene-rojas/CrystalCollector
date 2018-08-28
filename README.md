@@ -6,6 +6,7 @@ This is a number matching game created for the George Washington University 2018
 It was created with Javascript, jQuery, and Bootstrap CDN. 
 
 Credits: 
+
 • Crystal images: https://lunaandstellajewelryblog.weebly.com/uploads/1/0/3/0/103034366/birthstones-v2_orig.png
 
 • Cave photo: https://cdn.cnn.com/cnnnext/dam/assets/180118154958-mexico-diving-cave-3-full-169.jpg
