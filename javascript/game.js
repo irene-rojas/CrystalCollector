@@ -71,6 +71,8 @@ $(document).ready(function() {
             else if (userTotal >= targetNumber) {
                 lossCounter++;
                 $("#losses").text(lossCounter);
+                // reset these variables, back to userTotalArray=[]
+                // reset buttonValuesArray
                 // location.reload(true);
             };
         }) 
