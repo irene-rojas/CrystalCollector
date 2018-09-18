@@ -74,18 +74,24 @@ $(document).ready(function() {
                 // reset these variables, back to userTotalArray=[]
                 // reset buttonValuesArray
                 // location.reload(true);
+                $("#targetNumber").empty();
+                targetNumber = targetNumberArray[Math.floor(Math.random()*targetNumberArray.length)];
+                document.getElementById('targetNumber').innerHTML = targetNumber;
+                userTotalArray = [];
+                userTotal = 0;
+                $('#userTotal').text(userTotal);        
             };
         }) 
-    $("#restartButton").click(function(){
-        // location.reload(true);
-        $("#targetNumber").empty();
-        targetNumber = targetNumberArray[Math.floor(Math.random()*targetNumberArray.length)];
-        document.getElementById('targetNumber').innerHTML = targetNumber;
-        userTotalArray = [];
-        userTotal = 0;
-        $('#userTotal').text(userTotal);
+    // $("#restartButton").click(function(){
+    //     // location.reload(true);
+    //     $("#targetNumber").empty();
+    //     targetNumber = targetNumberArray[Math.floor(Math.random()*targetNumberArray.length)];
+    //     document.getElementById('targetNumber').innerHTML = targetNumber;
+    //     userTotalArray = [];
+    //     userTotal = 0;
+    //     $('#userTotal').text(userTotal);
 
-    });
+    // });
 });
 
 // console.log(userTotal);
