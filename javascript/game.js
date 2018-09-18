@@ -76,9 +76,15 @@ $(document).ready(function() {
                 // location.reload(true);
             };
         }) 
-    $("button").click(function(){
-        location.reload(true);
-    //     // I could not figure out a way to refresh just the targetumber/userTotal section.
+    $("#restartButton").click(function(){
+        // location.reload(true);
+        $("#targetNumber").empty();
+        targetNumber = targetNumberArray[Math.floor(Math.random()*targetNumberArray.length)];
+        document.getElementById('targetNumber').innerHTML = targetNumber;
+        userTotalArray = [];
+        userTotal = 0;
+        $('#userTotal').text(userTotal);
+
     });
 });
 
